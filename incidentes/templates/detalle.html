@@ -13,18 +13,18 @@
     <div><b>Fecha del suceso:</b> {{incidente.fecha}}</div>
     <div><b>Descripcion del suceso:</b> {{incidente.descripcion}}</div>
     <div><b>Acciones tomadas:</b> 
-        <ul>
+        <ol>
                             
             {% for accion in lista_acciones %}
                 <li>
-                    {{accion.descripcion}}
-                    {{acion.date_time}}
+                    {{accion.descripcion}} ||
+                    {{accion.date_time}}
                     <a href="editar_accion_{{accion.id}}/"><button>EDITAR</button></a>
                     <a href="borrar_accion_{{accion.id}}/"><button>BORRAR</button></a>
                 </li>  
             {% endfor %}
                            
-        </ul>
+        </ol>
     
     </div>
     <div>
@@ -38,7 +38,6 @@
     </div>
 
     <br>
-    <a href='editar_incidente_{{incidente.id}}/'><button>EDITAR</button></a>
     <a href="agregar_acciones/"><button>AGREGAR ACCIÓN</button></a>
     <a href="http://127.0.0.1:8000"><button>RETURN</button></a>
     

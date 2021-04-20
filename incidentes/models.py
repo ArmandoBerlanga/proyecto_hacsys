@@ -15,7 +15,6 @@ class Incidente (models.Model):
     reporto_persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
     descripcion = models.CharField(max_length=255)
     fecha = models.DateField()
-    acciones_tomadas = models.IntegerField()
     estatus = models.BooleanField()
 
     def __str__(self):
