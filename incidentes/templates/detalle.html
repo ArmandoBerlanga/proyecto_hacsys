@@ -12,7 +12,19 @@
     <div><b>Nombre de la persona que reporto:</b> {{incidente.reporto_persona}}</div>
     <div><b>Fecha del suceso:</b> {{incidente.fecha}}</div>
     <div><b>Descripcion del suceso:</b> {{incidente.descripcion}}</div>
-    <div><b>Acciones tomadas:</b> {{incidente.acciones_tomadas}}</div>
+    <div><b>Acciones tomadas:</b> 
+        <ul>
+                            
+            {% for accion in lista_acciones %}
+                <li>
+                    {{accion.descripcion}}
+                    {{acion.date_time}}
+                </li>  
+            {% endfor %}
+                           
+        </ul>
+    
+    </div>
     <div>
         <b>Resuelto:</b> 
         {% if incidente.estatus == True %}
@@ -23,6 +35,9 @@
         
     </div>
 
+    <br>
+    <a href='editar_incidente_{{incidente.id}}/'><button>EDITAR</button></a>
+    <a href="agregar_acciones/"><button>AGREGAR ACCIÓN</button></a>
     <a href="http://127.0.0.1:8000"><button>RETURN</button></a>
     
 </body>

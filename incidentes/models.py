@@ -15,7 +15,7 @@ class Incidente (models.Model):
     reporto_persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
     descripcion = models.CharField(max_length=255)
     fecha = models.DateField()
-    acciones_tomadas = models.CharField(max_length=255)
+    acciones_tomadas = models.IntegerField()
     estatus = models.BooleanField()
 
     def __str__(self):
@@ -25,3 +25,6 @@ class Accion (models.Model):
     id_conexion = models.ForeignKey(Incidente, on_delete=models.SET_NULL, null=True)
     descripcion = models.CharField(max_length=255)
     date_time = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return f"[{self.id_conexion}] {self.descripcion}"

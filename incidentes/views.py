@@ -1,13 +1,15 @@
-from incidentes.forms import FormsIncidente, FormsPersona
-from incidentes.models import Incidente, Persona
+from incidentes.forms import FormsAcccion, FormsIncidente, FormsPersona
+from incidentes.models import Accion, Incidente, Persona
 from django.shortcuts import get_object_or_404, redirect, render
 from django.forms import modelform_factory
 
 # Create your views here.
 
 def detalle_incidente(request, id : int):
-    incidente = Incidente.objects.get(pk = id)
-    return render (request, 'detalle.html', {'incidente': incidente})
+    incidente = Incidente.objects.get(pk=id)
+    acciones = Accion.objects.filter(id_conexion = id).order_by('date_time')
+    acciones = list(acciones)
+    return render (request, 'detalle.html', {'incidente': incidente, "lista_acciones" : acciones})
 
 def agregar_incidente(request):
     # FormsIncidente = modelform_factory(Incidente, exclude=[])
@@ -50,3 +52,14 @@ def agregar_persona(request):
         formaPersona = FormsPersona()
         
     return render (request, "agregar_persona.html", {"form" : formaPersona})
+    
+def agregar_accion (request):
+    if request.method == "POST":
+        formsAccion = FormsAcccion(request.POST)
+        if formsAccion.is_valid:
+            formsAccion.save()
+            return redirect ("index")
+    else:
+        formsAccion = FormsPersona()
+        
+    return render (request, "agregar_acciones.html", {"form" : formsAccion})

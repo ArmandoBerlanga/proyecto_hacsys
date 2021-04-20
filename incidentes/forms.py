@@ -1,7 +1,7 @@
 from django.db.models import fields
 from django.db.models.enums import IntegerChoices
 from django.forms import EmailInput
-from incidentes.models import Incidente, Persona
+from incidentes.models import Accion, Incidente, Persona
 from django.forms.models import ModelForm
 
 
@@ -21,4 +21,11 @@ class FormsIncidente (ModelForm):
         widgets = {
 
             "fecha" : EmailInput(attrs = {"type" : "date"})
+        }
+
+class FormsAcccion (ModelForm):
+    class Meta:
+        model = Accion
+        fields = "__all__"
+        widgets = {
         }

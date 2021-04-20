@@ -26,4 +26,5 @@ urlpatterns = [
     path("borrar_incidente_<int:id>/", borrar_incidente),
     path("agregar_incidente/", agregar_incidente),
     path("agregar_persona/", agregar_persona),
+    path("detalle_incidente_<int:id>/agregar_acciones/", agregar_incidente),
 ]
