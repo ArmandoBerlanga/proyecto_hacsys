@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle {{incidente.id}}</title>
+</head>
+<body>
+    
+    <h1>Detalles del incidente {{incidente.id}}</h1>
+    <div><b>Nombre de la persona que reporto:</b> {{incidente.reporto_persona}}</div>
+    <div><b>Fecha del suceso:</b> {{incidente.fecha}}</div>
+    <div><b>Descripcion del suceso:</b> {{incidente.descripcion}}</div>
+    <div><b>Acciones tomadas:</b> {{incidente.acciones_tomadas}}</div>
+    <div>
+        <b>Resuelto:</b> 
+        {% if incidente.estatus == True %}
+            Resuelto
+        {% else %}
+            No resuelto
+        {% endif %}
+        
+    </div>
+
+    <a href="http://127.0.0.1:8000"><button>RETURN</button></a>
+    
+</body>
+</html>

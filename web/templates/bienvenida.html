@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/formato_bienvenida.css">
+    <title>Sistema SAI</title>
+</head>
+
+<body>
+    <h1>Sistema de administracion de incidentes (SAI)</h1>
+    
+    <div>
+        <h2>Lista de incidentes hasta el momento: </h2>
+        
+        <table>
+            <caption><h3>Tabla 1. Incidentes enlistados con su respectiva información</h3></caption> 
+            
+            <tr>
+                <th id="identificador"> ID</th>
+                <th id="descripcion">DESCRIPCIÓN INCIDENTE</th>
+                <th id="empleado">EMPLEADO</th>
+                <th id="fecha">FECHA</th>
+                <th id="estauts">ESTATUS</th>
+                <th id="detalle">DETALLES</th>
+                <th id="edicion">EDICIÓN</th>
+                <th id="eliminar">ELIMINAR</th>
+            </tr>  
+            
+            {% for incidente in incidentes %}
+                <tr>
+                    <td>{{incidente.id}}</td>
+                    <td>{{incidente.descripcion}}</td>
+                    <td>{{incidente.reporto_persona.nombre}}</td>
+                    <td>{{incidente.fecha}}</td>
+                    {% if incidente.estatus == True %}
+                        <td>Resuelto</td>
+                    {% else %}
+                        <td>No resuelto</td>
+                    {% endif %}
+                    <td>
+                        <a href='detalle_incidente_{{incidente.id}}/'><button>VER MÁS</button></a>
+                    </td>
+                    <td>
+                        <a href='editar_incidente_{{incidente.id}}/'><button>EDITAR</button></a>
+                    </td>
+                    <td>
+                        <a href='borrar_incidente_{{incidente.id}}/'><button>BORRAR</button></a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+    <div>
+        <h3>Numero de incidentes registradas: {{total}}</h3> 
+    </div> 
+
+    <div>
+        <h2>Sección para agregar nuevos datos: </h2>
+        Para agregar:
+        <a href='agregar_incidente/'><button>INCIDENTES</button></a>
+        <a href='agregar_persona/'><button>EMPLEADOS</button></a>
+    </div>
+
+</body>
+
+</html>
