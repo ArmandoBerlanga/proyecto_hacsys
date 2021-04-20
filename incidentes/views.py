@@ -53,13 +53,31 @@ def agregar_persona(request):
         
     return render (request, "agregar_persona.html", {"form" : formaPersona})
     
-def agregar_accion (request):
+def agregar_accion (request, id : int):
     if request.method == "POST":
         formsAccion = FormsAcccion(request.POST)
         if formsAccion.is_valid:
             formsAccion.save()
-            return redirect ("index")
+            return redirect (f"http://127.0.0.1:8000/detalle_incidente_{id}")
     else:
-        formsAccion = FormsPersona()
+        formsAccion = FormsAcccion()
         
     return render (request, "agregar_acciones.html", {"form" : formsAccion})
+
+def editar_accion(request, id_con : int, id : int):
+    accion = Accion.objects.get(pk = id_con)
+    if request.method == "POST":
+        formsAccion = FormsAcccion(request.POST,instance=accion)
+        if formsAccion.is_valid:
+            formsAccion.save()
+            return redirect (f"http://127.0.0.1:8000/detalle_incidente_{id}")
+    else:
+        formsAccion = FormsAcccion(instance=accion)
+        
+    return render (request, "editar_acciones.html", {"form" : formsAccion})
+
+def borrar_accion(request, id_con : int, id : int):
+    accion = get_object_or_404(Accion, pk=id_con)
+    if accion:
+        accion.delete()
+    return redirect (f"http://127.0.0.1:8000/detalle_incidente_{id}")
