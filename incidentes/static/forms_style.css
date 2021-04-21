@@ -1,7 +1,54 @@
 body{
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 12em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #2B303A;
 }
 
 h1{
-    color: red;
+    color: #EB6043;
 }
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #F2F3D9;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+
+.container .title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.container form input, #id_id_conexion, #id_reporto_persona {
+    padding: 8px 18px; 
+    border-radius: 10px;
+    border-color: #999;
+}
+
+button {
+    padding: 10px 18px;
+    font-size: 0.8em;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #8499B1;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px #999;
+    font-weight: bold;
+  }
+  
+button:hover {
+    background-color: #5b6b7e
+}
+  
+button:active {
+    background-color: #5b6b7e;
+    box-shadow: 0 5px #666;
+  }
