@@ -55,6 +55,12 @@
         </table>
     </div>
 
+    <div id="mensaje_usuario">
+        {% if not salida %}
+            <p>**No se ha encontrado ningun valor, se han devuelto todos</p>
+        {% endif %}
+    </div>
+
     <div>
         <h3>Numero de incidentes registradas: {{total}}</h3> 
     </div> <br>
@@ -69,7 +75,7 @@
                     {{form}}
                 </table>
                 <br>
-                <button type="submit">FILTRAR</button>
+                <button type="submit">FILTRAR</button> 
                 {% csrf_token %}
             </form>
         </div>

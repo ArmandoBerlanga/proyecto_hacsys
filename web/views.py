@@ -31,5 +31,9 @@ def bienvenida(request):
     else:
         form = InfoFiltros(request.POST)
 
-    copia = copia if copia else incidentes
-    return render(request, "bienvenida.html", {"total": len(copia), "incidentes": copia, "form": form})
+    salida = False
+    if copia:
+        salida = True 
+    else:
+        copia = incidentes
+    return render(request, "bienvenida.html", {"total": len(copia), "incidentes": copia, "form": form, "salida" : salida})

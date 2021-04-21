@@ -29,7 +29,9 @@ class FormsAcccion (ModelForm):
         }    
 
 class InfoFiltros (forms.Form):
-    fecha = forms.DateField(label ="Fecha del incidente" ,widget=forms.TextInput(attrs={'class':'datepicker'}), required=False)
+    fecha = forms.DateField(label ="Fecha del incidente" ,
+        widget=forms.DateInput(attrs={'type':'date'}), required=False)
     nombre_empleado = forms.CharField(label="Nombre empleado", required=False)
+        # widget=forms.TextInput(attrs={'placeholder' : ''}))
     descripcion_incidente = forms.CharField(label="Que la descripción contenga", required=False)
     estatus = forms.ChoiceField(choices= ((True, "Resuelto"), (False, "No resuelto"), (None, "--")), required=False)
