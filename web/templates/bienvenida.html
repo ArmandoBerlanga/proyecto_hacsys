@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/formato_bienvenida.css">
     <title>Sistema SAI</title>
 </head>
 
@@ -14,8 +17,8 @@
     <div>
         <h2>Lista de incidentes hasta el momento: </h2>
         
-        <table>
-            <caption><h3>Tabla 1. Incidentes enlistados con su respectiva información</h3></caption> 
+        <table class="content_table">
+            <caption><h3>Incidentes enlistados con su respectiva información</h3></caption> 
             <thead>
                 <tr>
                     <th id="identificador"> ID</th>
@@ -47,7 +50,7 @@
                         <a href='editar_incidente_{{incidente.id}}/'><button>EDITAR</button></a>
                     </td>
                     <td>
-                        <a href='borrar_incidente_{{incidente.id}}/'><button>BORRAR</button></a>
+                        <a href='borrar_incidente_{{incidente.id}}/'><button id="borrar">BORRAR</button></a>
                     </td>
                 </tr>
             {% endfor %}
@@ -69,7 +72,7 @@
         <h2>Seccion de filtros:</h2>
 
         <div>
-            <form method="POST">
+            <form method="POST" class="filter_form">
                 <h3>Formulario para filtrar segun la lista de incidentes: </h3>
                 <table>
                     {{form}}
@@ -90,5 +93,4 @@
     </div>
 
 </body>
-
 </html>
