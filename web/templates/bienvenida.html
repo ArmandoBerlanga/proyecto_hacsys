@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/formato_bienvenida.css">
     <title>Sistema SAI</title>
 </head>
 
@@ -17,17 +16,18 @@
         
         <table>
             <caption><h3>Tabla 1. Incidentes enlistados con su respectiva información</h3></caption> 
-            
-            <tr>
-                <th id="identificador"> ID</th>
-                <th id="descripcion">DESCRIPCIÓN INCIDENTE</th>
-                <th id="empleado">EMPLEADO</th>
-                <th id="fecha">FECHA</th>
-                <th id="estauts">ESTATUS</th>
-                <th id="detalle">DETALLES</th>
-                <th id="edicion">EDICIÓN</th>
-                <th id="eliminar">ELIMINAR</th>
-            </tr>  
+            <thead>
+                <tr>
+                    <th id="identificador"> ID</th>
+                    <th id="descripcion">DESCRIPCIÓN INCIDENTE</th>
+                    <th id="empleado">EMPLEADO</th>
+                    <th id="fecha">FECHA</th>
+                    <th id="estauts">ESTATUS</th>
+                    <th id="detalle">DETALLES</th>
+                    <th id="edicion">EDICIÓN</th>
+                    <th id="eliminar">ELIMINAR</th>
+                </tr>  
+            </thead>
             
             {% for incidente in incidentes %}
                 <tr>
@@ -57,7 +57,24 @@
 
     <div>
         <h3>Numero de incidentes registradas: {{total}}</h3> 
-    </div> 
+    </div> <br>
+
+    <div>
+        <h2>Seccion de filtros:</h2>
+
+        <div>
+            <form method="POST">
+                <h3>Formulario para filtrar segun la lista de incidentes: </h3>
+                <table>
+                    {{form}}
+                </table>
+                <br>
+                <button type="submit">FILTRAR</button>
+                {% csrf_token %}
+            </form>
+        </div>
+
+    </div> <br><br>
 
     <div>
         <h2>Sección para agregar nuevos datos: </h2>

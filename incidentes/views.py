@@ -1,18 +1,14 @@
 from incidentes.forms import FormsAcccion, FormsIncidente, FormsPersona
 from incidentes.models import Accion, Incidente, Persona
 from django.shortcuts import get_object_or_404, redirect, render
-from django.forms import modelform_factory
-
-# Create your views here.
 
 def detalle_incidente(request, id : int):
     incidente = Incidente.objects.get(pk=id)
-    acciones = Accion.objects.filter(id_conexion = id).order_by('date_time')
+    acciones = Accion.objects.filter(id_conexion = id)
     acciones = list(acciones)
     return render (request, 'detalle.html', {'incidente': incidente, "lista_acciones" : acciones})
 
 def agregar_incidente(request):
-    # FormsIncidente = modelform_factory(Incidente, exclude=[])
     if request.method == "POST":
         formaIncidente = FormsIncidente(request.POST)
         if formaIncidente.is_valid:
@@ -26,9 +22,11 @@ def agregar_incidente(request):
 def editar_incidente(request, id : int):
     incidente = Incidente.objects.get(pk = id)
     if request.method == "POST":
-        formaIncidente = FormsIncidente(request.POST,instance=incidente)
+        formaIncidente = FormsIncidente(request.POST, instance=incidente)
         if formaIncidente.is_valid:
-            formaIncidente.save()
+            if formaIncidente['estatus'].value() != incidente.estatus:
+                formaIncidente.save()
+                agregar_accion_obligatoria(request, id)
             return redirect ("index")
     else:
         formaIncidente = FormsIncidente(instance=incidente)
@@ -42,7 +40,6 @@ def borrar_incidente(request, id : int):
     return redirect ("index")
 
 def agregar_persona(request):
-    # FormsPersona = modelform_factory(Persona, exclude=[])
     if request.method == "POST":
         formaPersona = FormsPersona(request.POST)
         if formaPersona.is_valid:
@@ -61,7 +58,11 @@ def agregar_accion (request, id : int):
             return redirect (f"http://127.0.0.1:8000/detalle_incidente_{id}")
     else:
         formsAccion = FormsAcccion()
-        
+
+    return render (request, "agregar_acciones.html", {"form" : formsAccion})
+
+def agregar_accion_obligatoria (request, id : int):
+    formsAccion = FormsAcccion()    
     return render (request, "agregar_acciones.html", {"form" : formsAccion})
 
 def editar_accion(request, id_con : int, id : int):

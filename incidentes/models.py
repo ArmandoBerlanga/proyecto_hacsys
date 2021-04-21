@@ -18,7 +18,7 @@ class Incidente (models.Model):
     estatus = models.BooleanField()
 
     def __str__(self):
-        return f"Incidente con ID [{self.id}] {self.descripcion}"
+        return f"ID [{self.id}] {self.descripcion} || {self.fecha}"
 
 class Accion (models.Model):
     id_conexion = models.ForeignKey(Incidente, on_delete=models.SET_NULL, null=True)
