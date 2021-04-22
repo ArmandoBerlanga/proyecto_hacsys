@@ -15,6 +15,7 @@ class Incidente (models.Model):
     descripcion = models.CharField(max_length=255)
     fecha = models.DateField()
     estatus = models.BooleanField()
+    razon_de_cambio = models.CharField(max_length=255)
 
     def __str__(self):
         return f"ID [{self.id}] {self.descripcion} || {self.fecha}"
