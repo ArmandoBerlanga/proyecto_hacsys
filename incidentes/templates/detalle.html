@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'detalle_style.css' %}">
     <title>Detalle {{incidente.id}}</title>
 </head>
 <body>
@@ -13,14 +15,14 @@
     <div><b>Fecha del suceso:</b> {{incidente.fecha}}</div>
     <div><b>Descripcion del suceso:</b> {{incidente.descripcion}}</div>
     <div><b>Acciones tomadas:</b> 
-        <ol>
+        <ol id="content_list">
                             
             {% for accion in lista_acciones %}
                 <li>
                     {{accion.descripcion}} ||
                     {{accion.date_time}}
                     <a href="editar_accion_{{accion.id}}/"><button>EDITAR</button></a>
-                    <a href="borrar_accion_{{accion.id}}/"><button>BORRAR</button></a>
+                    <a href="borrar_accion_{{accion.id}}/"><button id="borrar">BORRAR</button></a>
                 </li>  
             {% endfor %}
                            
@@ -39,7 +41,7 @@
 
     <br>
     <a href="agregar_acciones/"><button>AGREGAR ACCIÓN</button></a>
-    <a href="http://127.0.0.1:8000"><button>RETURN</button></a>
+    <a href="http://127.0.0.1:8000"><button id="return">RETURN</button></a>
     
 </body>
 </html>

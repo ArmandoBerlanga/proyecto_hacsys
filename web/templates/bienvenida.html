@@ -72,21 +72,18 @@
         <h3>Numero de incidentes registradas: {{total}}</h3> 
     </div> <br>
 
-    <div>
+    <div class="to-move">
         <h2>Seccion de filtros:</h2>
-
-        <div>
-            <form method="POST" class="filter_form">
-                <h3>Formulario para filtrar segun la lista de incidentes: </h3>
-                <table>
-                    {{form}}
-                </table>
-                <br>
-                <button type="submit">FILTRAR</button> 
-                {% csrf_token %}
-            </form>
-        </div>
-
+        <form method="POST" class="filter_form">
+            <h3>Formulario para filtrar segun la lista de incidentes: </h3>
+            <table>
+                {{form}}
+            </table>
+            <br>
+            <button type="submit">FILTRAR</button> 
+            {% csrf_token %}
+        </form>
     </div>
+
 </body>
 </html>

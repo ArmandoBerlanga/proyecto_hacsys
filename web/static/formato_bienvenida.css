@@ -107,3 +107,12 @@ input:focus {
     padding: 8.5px 16.5px;
     font-size: 0.9em;
   }
+
+.to-move{
+    display: inline-block;
+    position: absolute;
+    left: 67em;
+    bottom: 23.2em;
+    padding: 0 0 0 2em;
+
+}

@@ -52,3 +52,17 @@ button:active {
     background-color: #5b6b7e;
     box-shadow: 0 5px #666;
   }
+
+#return {
+    background-color: #cbc8c0;
+}
+
+#return:hover {
+    background-color: #96abaf
+}
+  
+#return:active {
+    background-color: #96abaf;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
