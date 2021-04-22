@@ -108,8 +108,9 @@ input:focus {
 .to-move{
     display: inline-block;
     position: absolute;
-    left: 67em;
+    left: 66em;
     bottom: 23.2em;
-    padding: 0 0 0 2em;
-
+    padding: 0 2em 2em 2.5em;
+    border:1px dotted #2B303A;
+    background-color: #F2F3D9;
 }

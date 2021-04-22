@@ -29,15 +29,14 @@ def editar_incidente(request, id: int):  # creacion de un forms para editar inci
         formaIncidente = FormsIncidente(request.POST, instance=incidente)
         if formaIncidente.is_valid:
             # si el estatus cambia respecto al original
-            if formaIncidente['estatus'].value() != incidente.estatus:
-                formaIncidente.save()
-                #codigo para agregar accion obligatoria
-            
+            # if formaIncidente['estatus'].value() != incidente.estatus:
+            # code para el cambio de estatus con razon de cambio requerida
+            formaIncidente.save()
             return redirect("index")
     else:
         formaIncidente = FormsIncidente(instance=incidente)
 
-    return render(request, "editar_incidente.html", {"form": formaIncidente})
+    return render(request, "editar_incidente.html", {"form" : formaIncidente})
 
 
 def borrar_incidente(request, id: int):  # para borrar un incidente
