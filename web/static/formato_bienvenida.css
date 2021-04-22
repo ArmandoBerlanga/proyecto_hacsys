@@ -41,7 +41,6 @@ h2 {
 
 .content_table tbody tr:nth-of-type(even){
     background-color: #f3f3f3;
-
 }
 
 #mensaje_usuario {
@@ -73,7 +72,6 @@ button:hover {
 button:active {
     background-color: #F9CB40;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
   }
 
 .content_table #borrar {
@@ -112,7 +110,6 @@ input:focus {
     left: 66em;
     bottom: 23.2em;
     padding: 0 2em 2em 2.5em;
-    border:1px dotted #2B303A;
     border-radius: 10px;
     background-color: #F2F3D9;
 }
