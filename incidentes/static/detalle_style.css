@@ -46,42 +46,26 @@ button {
     border-radius: 10px;
     box-shadow: 0 2px #999;
     font-weight: bold;
-  }
+}
   
 button:hover {
-    background-color: #5b6b7e
+    background-color: #F9CB40;
 }
   
 button:active {
-    background-color: #5b6b7e;
+    background-color: #F9CB40;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-
-#borrar {
-    background-color: #f1c540;
-  }
-
-#borrar:hover {
-    background-color: #dab139
 }
-  
-#borrar:active {
-    background-color: #dab139;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
 
-#return {
+#return, #borrar {
     background-color: #cbc8c0;
-  }
+}
 
-#return:hover {
-    background-color: #96abaf
+#return:hover, #borrar:hover {
+    background-color: #96abaf;
 }
   
-#return:active {
+#return:active, #borrar:active {
     background-color: #96abaf;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+}

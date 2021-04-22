@@ -45,11 +45,11 @@ button {
   }
   
 button:hover {
-    background-color: #5b6b7e
+    background-color: #F9CB40
 }
   
 button:active {
-    background-color: #5b6b7e;
+    background-color: #F9CB40;
     box-shadow: 0 5px #666;
   }
 
@@ -64,5 +64,12 @@ button:active {
 #return:active {
     background-color: #96abaf;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+}
+
+#id_estatus{
+    width:18px;
+    height:18px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}

@@ -66,29 +66,26 @@ button {
   }
   
 button:hover {
-    background-color: #5b6b7e
+    background-color: #F9CB40;
 }
   
 button:active {
-    background-color: #5b6b7e;
+    background-color: #F9CB40;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
 
 .content_table #borrar {
-
-    background-color: #f1c540;
-
+    background-color: #cbc8c0;
   }
 
 .content_table #borrar:hover {
-    background-color: #dab139
+    background-color: #96abaf;
 }
   
 .content_table #borrar:active {
-    background-color: #dab139;
+    background-color: #96abaf;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
   }
 
 input {

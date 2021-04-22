@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'web',
+    'web', # registo de apps a utilizar
     'incidentes',
 ]
 
@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'registro_incidentes.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = { # cree una base de datos para el manejo de la información
-    'default': {
+    'default': { # puse informacion genrica y creada para la tarea
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'registro_incidentes_bd',
-        'USER': 'armando',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'registro_incidentes_bd', # se requiere importarla al SGBD
+        'USER': 'armando', # se requiere cambio en caso de probarla
+        'PASSWORD': 'password', # se requiere cambio en caso de probarla
+        'HOST': 'localhost', # tal vez se requiere cambio en caso de probarla
     }
 
 }
@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # se agrego esta seccion para el contenido estatico
 STATIC_ROOT = os.path.join(BASE_DIR, '/')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
