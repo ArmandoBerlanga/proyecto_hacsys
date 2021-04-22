@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/formato_bienvenida.css">
+    <link rel="icon" href = "static/icon.png" type = "image/x-icon">
     <title>Sistema SAI</title>
 </head>
 
@@ -75,7 +76,6 @@
     <div class="to-move">
         <h2>Seccion de filtros:</h2>
         <form method="POST" class="filter_form">
-            <h3>Formulario para filtrar segun la lista de incidentes: </h3>
             <table>
                 {{form}}
             </table>
@@ -84,6 +84,5 @@
             {% csrf_token %}
         </form>
     </div>
-
 </body>
 </html>

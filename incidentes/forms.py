@@ -32,6 +32,5 @@ class InfoFiltros (forms.Form):
     fecha = forms.DateField(label ="Fecha del incidente" ,
         widget=forms.DateInput(attrs={'type':'date'}), required=False)
     nombre_empleado = forms.CharField(label="Nombre empleado", required=False)
-        # widget=forms.TextInput(attrs={'placeholder' : ''}))
-    descripcion_incidente = forms.CharField(label="La descripción contiene", required=False)
+    descripcion_incidente = forms.CharField(label="Descripción contiene", required=False)
     estatus = forms.ChoiceField(choices= ((True, "Resuelto"), (False, "No resuelto"), (None, "--")), required=False)

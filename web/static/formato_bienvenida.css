@@ -79,11 +79,11 @@ button:active {
   }
 
 .content_table #borrar:hover {
-    background-color: #96abaf;
+    background-color: #E77156;
 }
   
 .content_table #borrar:active {
-    background-color: #96abaf;
+    background-color: #E77156;
     box-shadow: 0 5px #666;
   }
 
@@ -107,8 +107,8 @@ input:focus {
 .to-move{
     display: inline-block;
     position: absolute;
-    left: 66em;
-    bottom: 23.2em;
+    left: 65.5em;
+    bottom: 12.4em;
     padding: 0 2em 2em 2.5em;
     border-radius: 10px;
     background-color: #F2F3D9;

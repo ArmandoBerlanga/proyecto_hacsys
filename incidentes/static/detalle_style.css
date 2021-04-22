@@ -61,11 +61,26 @@ button:active {
     background-color: #cbc8c0;
 }
 
-#return:hover, #borrar:hover {
+#return:hover {
     background-color: #96abaf;
 }
   
-#return:active, #borrar:active {
+#return:active {
     background-color: #96abaf;
     box-shadow: 0 5px #666;
 }
+
+#borrar:hover {
+    background-color: #E77156;
+}
+
+#borrar:active {
+    background-color: #E77156;
+    box-shadow: 0 5px #666;
+}
+
+li{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
