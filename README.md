@@ -8,6 +8,8 @@ En 3 horas, generar una aplicación, que tenga las siguientes características (
     • Poder ver incidentes levantados
     • Poder editar las acciones tomadas en un incidente para agregar mas acciones o modificar las existentes
     • Poder eliminar incidentes generados erróneamente
+    • Poder cambiar el estatus del incidente: de abierto a cerrado, o de cerrado a abierto. Se debe indicar un motivo del cambio de status para que aplique
+    • Poder filtrar incidentes a visualizar
 
 Para su correcta implementación ten en cuenta que debes instalar:
     • Django (version actual)

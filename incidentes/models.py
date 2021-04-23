@@ -8,7 +8,7 @@ class Persona (models.Model):
     email = models.CharField(max_length=255)
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido_materno} {self.apellido_materno}"
+        return f"{self.nombre} {self.apellido_paterno} {self.apellido_materno}"
 
 class Incidente (models.Model):
     reporto_persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
