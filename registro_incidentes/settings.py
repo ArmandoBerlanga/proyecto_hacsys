@@ -1,3 +1,6 @@
+import pymysql
+pymysql.install_as_MySQLdb()
+
 """
 Django settings for registro_incidentes project.
 
@@ -78,10 +81,10 @@ WSGI_APPLICATION = 'registro_incidentes.wsgi.application'
 
 DATABASES = { # cree una base de datos para el manejo de la información
     'default': { # puse informacion genrica y creada para la tarea
-        'ENGINE': 'mysql.connector.django',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'registro_incidentes_bd', # se requiere importarla al SGBD
-        'USER': 'armando', # se requiere cambio en caso de probarla
-        'PASSWORD': 'password', # se requiere cambio en caso de probarla
+        'USER': 'root', # se requiere cambio en caso de probarla
+        'PASSWORD': '', # se requiere cambio en caso de probarla
         'HOST': 'localhost', # tal vez se requiere cambio en caso de probarla
     }
 
